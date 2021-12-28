@@ -5,17 +5,18 @@ class Circles {
         this.amount = n;
         this.max_radius = max_radius;
         this.circles = [];
+        this.min_radius = 2;
     }
 
     setCircles() {
         let safety = 0;
         for (let i = 0; i < this.amount; i++) {
-            if (safety > 100000) {
+            if (safety > 1000000) {
                 break;
             }
             let x = round(random(width));
             let y = round(random(height));
-            let radius = round(random(1, this.max_radius));
+            let radius = round(random(this.min_radius, this.max_radius));
             let c = color(random(150,255), random(150,255), random(150,255), random(200,255));
             // if circles is empty, push a new circle
             if (this.circles.length === 0) {
@@ -66,8 +67,10 @@ class Circles {
         return false;
     }
 
-
-
+    // A method that clears the array of circles
+    clearCircles() {
+        this.circles = [];
+    }
     
 }
 
