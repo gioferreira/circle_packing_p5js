@@ -9,9 +9,6 @@ function setup() {
   max_radius = 600;
   circles = new Circles(amount, max_radius);
   circles.setCircles();
-
-  
-
 }
 
 function draw() {
